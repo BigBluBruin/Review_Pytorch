@@ -37,3 +37,23 @@ print(f"shape of tensor: {tensor.shape}")
 print(f"data type of tensor: {tensor.dtype}")
 print(f"device on which tensor is stored: {tensor.device}" )
 print(f"tensor data: {tensor.data}")
+
+
+#-------------------------------------------------------------------------
+#-------------------------------------------------------------------------
+
+
+# Tensor Operations
+if torch.cuda.is_available():
+    tensor = tensor.to('cuda')
+print(f"Device tensor is stored on: {tensor.device}")
+
+## try element-wise multiplication -- "*"
+ten_1 = torch.rand((1,2,))
+ten_2 = torch.rand((2,2,))
+print(f"Tensor multiplication 1: {ten_1.mul(ten_2)}")
+print(f"Tensor multiplication 1: {ten_1*ten_2}")
+
+## try matrix multiplication -- "@"
+print(f"Tensor multiplication 1: {ten_1.matmul(ten_1.T)}")
+print(f"Tensor multiplication 1: {ten_1@ten_1.T}")
