@@ -12,13 +12,13 @@ labels = torch.rand(1, 1000) #labels are torch type
 prediction = model(data) # forward pass
 # # calculate loss 
 loss = (prediction-labels).sum()
-# print(loss)
+print(loss)
 # # back propagation
 loss.backward()
 # # load optimizer
-# optim = torch.optim.SGD(model.parameters(), lr=1e-2, momentum=0.9)
+optim = torch.optim.SGD(model.parameters(), lr=1e-2, momentum=0.9)
 # # train neural network one step
-# optim.step()
+optim.step()
 
 
 
